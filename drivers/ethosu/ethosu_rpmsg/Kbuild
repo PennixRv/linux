@@ -1,0 +1,37 @@
+#
+# SPDX-FileCopyrightText: Copyright 2020, 2022-2024 Arm Limited and/or its affiliates <open-source-office@arm.com>
+# SPDX-License-Identifier: GPL-2.0-only
+#
+# This program is free software and is provided to you under the terms of the
+# GNU General Public License version 2 as published by the Free Software
+# Foundation, and any use by you of this program is subject to the terms
+# of such GNU licence.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, you can access it online at
+# http://www.gnu.org/licenses/gpl-2.0.html.
+#
+
+ccflags-y += -Werror -I$(src)/include
+
+# 如果你想用同一个 config 开关，这里可以：
+obj-$(CONFIG_ETHOSU_RPMSG_DRIVER) := ethosu_rpmsg.o
+
+ethosu_rpmsg-objs := \
+        common/ethosu_driver.o \
+        common/ethosu_buffer.o \
+        common/ethosu_dma_mem.o \
+        common/ethosu_device.o \
+        rpmsg/ethosu_rpmsg_cancel_inference.o \
+        rpmsg/ethosu_rpmsg_network.o \
+        rpmsg/ethosu_rpmsg_network_info.o \
+        rpmsg/ethosu_rpmsg_capabilities.o \
+        rpmsg/ethosu_rpmsg_inference.o \
+        rpmsg/ethosu_rpmsg_mailbox.o \
+        rpmsg/ethosu_rpmsg_version.o
+

@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: GPL-2.0-only
+menuconfig ETHOSU
+    bool "Support for Ethos-U driver stack"
+    help
+      Enable the Ethos-U driver stack.
+
+if ETHOSU
+
+source "drivers/ethosu/ethosu_rpmsg/Kconfig"
+source "drivers/ethosu/mailbox/Kconfig"
+source "drivers/ethosu/remoteproc/Kconfig"
+
+endif

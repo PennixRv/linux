@@ -1,0 +1,3 @@
+obj-$(CONFIG_ETHOSU) += ethosu_rpmsg/
+obj-$(CONFIG_ETHOSU) += mailbox/
+obj-$(CONFIG_ETHOSU) += remoteproc/
